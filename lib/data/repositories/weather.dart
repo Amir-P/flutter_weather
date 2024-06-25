@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 
 const String _weatherCacheKeySuffix = 'weather';
 
-@injectable
+@LazySingleton(as: WeatherRepository)
 class WeatherRepositoryImpl extends LocalFirstRepository
     implements WeatherRepository {
   final WeatherRemoteDatasource datasource;

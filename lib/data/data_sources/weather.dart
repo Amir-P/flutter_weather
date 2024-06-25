@@ -8,7 +8,7 @@ abstract class WeatherRemoteDatasource {
   Future<WeatherDTO> getWeather(LocationCoordinates coordinates);
 }
 
-@injectable
+@LazySingleton(as: WeatherRemoteDatasource)
 class WeatherRemoteDataSourceImpl extends RemoteDataSource
     implements WeatherRemoteDatasource {
   const WeatherRemoteDataSourceImpl(super.http);

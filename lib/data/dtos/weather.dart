@@ -32,5 +32,5 @@ class WeatherDTO extends Equatable {
       );
 
   @override
-  List<Object?> get props => [id, cod, temperature, description, icon];
+  List<Object?> get props => <Object?>[id, cod, temperature, description, icon];
 }

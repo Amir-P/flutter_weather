@@ -3,16 +3,17 @@ import 'package:flutter_weather/domain/entities/city.dart';
 import 'package:flutter_weather/domain/entities/coordinates.dart';
 
 class CityDTO extends Equatable {
-  final String name, state, country;
+  final String name, country;
+  final String? state;
   final double lat, lon;
   final Map<String, dynamic>? localNames;
 
   const CityDTO({
     required this.name,
-    required this.state,
     required this.country,
     required this.lat,
     required this.lon,
+    this.state,
     this.localNames,
   });
 
@@ -32,5 +33,5 @@ class CityDTO extends Equatable {
       );
 
   @override
-  List<Object?> get props => [name, state, country, lat, lon, localNames];
+  List<Object?> get props => <Object?>[name, state, country, lat, lon, localNames];
 }

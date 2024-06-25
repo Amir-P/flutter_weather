@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 
 const String _citiesCacheKeySuffix = 'cities';
 
-@injectable
+@LazySingleton(as: CityRepository)
 class CityRepositoryImpl extends LocalFirstRepository
     implements CityRepository {
   final CityRemoteDatasource datasource;

@@ -8,7 +8,7 @@ abstract class CacheStore {
   Future<void> put(Object key, Object value);
 }
 
-@injectable
+@LazySingleton(as: CacheStore)
 class MemCacheStore implements CacheStore {
   final Map<Object, Object> _memCache = <Object, Object>{};
 

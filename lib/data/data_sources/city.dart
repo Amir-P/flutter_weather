@@ -7,14 +7,14 @@ abstract class CityRemoteDatasource {
   Future<List<CityDTO>> getCities(String query);
 }
 
-@injectable
+@LazySingleton(as: CityRemoteDatasource)
 class CityRemoteDataSourceImpl extends RemoteDataSource
     implements CityRemoteDatasource {
   const CityRemoteDataSourceImpl(super.http);
 
   @override
   Future<List<CityDTO>> getCities(String query) async {
-    final List<Map<String, dynamic>> response = await http.request(
+    final List<dynamic> response = await http.request(
       '/geo/1.0/direct',
       queryParameters: <String, dynamic>{
         'q': query,
@@ -22,6 +22,6 @@ class CityRemoteDataSourceImpl extends RemoteDataSource
         'appid': config.weatherApiKey,
       },
     );
-    return response.map<CityDTO>(CityDTO.fromMap).toList();
+    return response.map<CityDTO>((dynamic e) => CityDTO.fromMap(e)).toList();
   }
 }

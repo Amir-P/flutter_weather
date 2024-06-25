@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_weather (dev)",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define-from-file=dev_env.json"
+            ],
+        },
+    ]
+}

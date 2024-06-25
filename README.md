@@ -16,3 +16,9 @@ A simple weather application using [OpenWeather](https://openweathermap.org) API
 ```
 
 Or `flutter run --dart-define=weather_api_key=YOUR_API_KEY --dart-define=weather_api_url=https://api.openweathermap.org`.
+
+## Improvements for future
+
+1. Better error handling
+2. Increase test coverage by adding widget tests
+3. Polish the UI
